@@ -1,0 +1,85 @@
+
+-- Task 1: Using count, get the number of cities in the USA
+ Use world;
+Select COUNT(Id) As USA_cities_count
+from city 
+where CountryCode = 'USA';
+
+-- Task 2: what the population and average life expectancy for people in Argentina (ARG) 
+Use world;
+select Population, LifeExpectancy
+from country
+where Name = 'Argentina';
+
+-- Task 3: Using ORDER BY, LIMIT, what country has the highest life expectancy?
+Use world;
+Select Name, LifeExpectancy from country 
+order by LifeExpectancy DESC
+Limit 1;
+
+-- Task 4: Select 25 cities around the world that start with the letter 'F' in a single SQL query.
+Use world;
+Select  * from city
+where Name like 'F%'
+limit 25;
+
+-- Task 5: Create a SQL statement to display columns Id, Name, Population from the city table and limit results to first 10 rows only.
+Use world;
+Select Id, Name, Population from city 
+limit 10;
+
+-- Task 6: Create a SQL statement to display columns Id, Name, Population from the city table and limit results to rows 31-40.
+Use world;
+Select Id, Name, Population from city 
+where Id between 31 and 40;
+
+-- Task 7: Create a SQL statement to find only those cities from city table whose population is larger than 2000000.
+Use world;
+Select * from city
+where Population > 2000000;
+
+-- Task 8: Create a SQL statement to find all city names from city table whose name begins with Be prefix.
+Select Name from city 
+where Name like 'Be%';
+
+-- Task 9: Create a SQL statement to find only those cities from city table whose population is between 500000-1000000.
+Select Name, Population from city 
+where Population between 500000 and 1000000
+order by Population ASC;
+
+-- Task 10: Create a SQL statement to display all cities from the city table sorted by Name in ascending order.
+Select Name from city 
+order by Name ASC;
+
+-- Task 11: Create a SQL statement to find a city with the lowest population in the city table
+Select Name, Population As Lowest_Population 
+from city
+order by Population
+LIMIT 1;
+  
+-- Task 12: Create a SQL statement to find a country with the largest population in the country table.
+Select Name, Population As Largest_Population 
+from country
+order by Population DESC
+LIMIT 1;
+
+-- Task 13: Create a SQL statement to find the capital of Spain (ESP)
+Use world;
+SELECT city.Name
+FROM city
+INNER JOIN country ON city.CountryCode = country.Code
+where Country.Code= 'ESP' and country.capital=city.Id;
+
+-- Task 14: Create a SQL statement to find all cities from the Europe continent.
+select city.name, country.continent
+from city
+inner join country on city.countrycode= country.Code
+where continent='Europe';
+
+-- Task 15:Create a SQL statement to list all the languages spoken in the Caribbean region.
+select Distinct(countrylanguage.Language)
+from countrylanguage
+inner join country on countrylanguage.CountryCode = country.Code
+where Country.Region = 'Caribbean' and countrylanguage.IsOfficial = 'T';
+
+
