@@ -1,4 +1,3 @@
-
 -- Task 1: change the points to reads times by 10 and plus 100
 USE sql_store;
 select last_name, first_name,points, (points*10)+100
