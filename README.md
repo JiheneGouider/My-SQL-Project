@@ -1,4 +1,4 @@
-1) This query is counting the number of cities in the database that belong to the USA and labeling the result as "USA_cities_count".
+1) This query is counting the number of cities in the database that belong to the USA and labeling the result as "USA_cities_count".  
 ![query1](https://github.com/JiheneGouider/My-SQL-Project/assets/168087527/ddd8da22-ba0c-4cdf-a760-dda224f29ed9)
 2)  This query retrieves the population and life expectancy of Argentina from the "country" table in the "world" database
 ![query2](https://github.com/JiheneGouider/My-SQL-Project/assets/168087527/cecc2c30-1346-42b4-804a-edf7db319d37)
